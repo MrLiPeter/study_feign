@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: user-service
+server:
+  port: 8088
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+feign:
+  compression:
+    request:
+      enabled: true   #请求压缩
+      mime-types: text/xml,application/xml,application/json #支持的请求格式
+      min-request-size: 2048 #请求数据再2048kb时开启压缩
+    response:
+      enabled: true    #响应压缩
+      useGzipDecoder: true #响应解压
